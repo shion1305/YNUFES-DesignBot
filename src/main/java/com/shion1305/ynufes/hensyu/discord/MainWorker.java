@@ -1,4 +1,4 @@
-package com.shion1305.ynufes.hensyu;
+package com.shion1305.ynufes.hensyu.discord;
 
 import com.linecorp.bot.client.LineMessagingClient;
 import com.linecorp.bot.model.PushMessage;
@@ -7,6 +7,7 @@ import com.linecorp.bot.model.message.flex.component.*;
 import com.linecorp.bot.model.message.flex.container.Bubble;
 import com.linecorp.bot.model.message.flex.unit.*;
 import com.linecorp.bot.model.response.BotApiResponse;
+import com.shion1305.ynufes.hensyu.ConfigManager;
 import discord4j.common.util.Snowflake;
 import discord4j.core.DiscordClient;
 import discord4j.core.GatewayDiscordClient;

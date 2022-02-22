@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Logger;
 
-class ConfigManager {
+public class ConfigManager {
     private static final Logger logger = Logger.getLogger("ConfigManager");
     private static Properties config;
     private final static String configDir = System.getProperty("user.home") + "/ShionServerConfig/HensyuBot";
@@ -25,11 +25,11 @@ class ConfigManager {
         }
     }
 
-    static String getConfig(String field) {
+    public static String getConfig(String field) {
         return config.getProperty(field);
     }
 
-    static void refresh() {
+    public static void refresh() {
         init();
     }
 }

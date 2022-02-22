@@ -1,4 +1,4 @@
-package com.shion1305.ynufes.hensyu;
+package com.shion1305.ynufes.hensyu.discord;
 
 public class MessageData {
     long userID;
