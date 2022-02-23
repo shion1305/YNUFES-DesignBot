@@ -1,4 +1,4 @@
-package com.shion1305.ynufes.hensyu;
+package com.shion1305.ynufes.hensyu.discord;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
