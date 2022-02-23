@@ -48,7 +48,7 @@ public class MainWorker {
 
     public MainWorker() {
         logger.info("MainWorker Initiated");
-        GatewayDiscordClient client = DiscordClient.create(ConfigManager.getConfig("DiscordToken")).gateway().setEnabledIntents(IntentSet.all()).login().block();
+        GatewayDiscordClient client = DiscordClientManager.getClient();
         disposables.add(client.on(VoiceStateUpdateEvent.class)
                 .publishOn(Schedulers.boundedElastic())
                 .filter(voiceStateUpdateEvent -> !voiceStateUpdateEvent.getCurrent().getMember().block().isBot())
