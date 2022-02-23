@@ -1,0 +1,50 @@
+{
+  "type": "bubble",
+  "size": "kilo",
+  "hero": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "Reminder",
+        "align": "center",
+        "color": "#ffffff",
+        "size": "sm"
+      }
+    ],
+    "background": {
+      "type": "linearGradient",
+      "angle": "110deg",
+      "startColor": "#ad13eb",
+      "endColor": "#eb13e7"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "ああああああああああああああああああああ",
+        "align": "center",
+        "size": "xxl",
+        "wrap": true
+      }
+    ],
+    "paddingBottom": "2px"
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "期限: 2021/10/1",
+        "align": "end",
+        "size": "xs"
+      }
+    ],
+    "spacing": "0px"
+  }
+}
