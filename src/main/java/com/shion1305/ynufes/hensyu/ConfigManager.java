@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 public class ConfigManager {
     private static final Logger logger = Logger.getLogger("ConfigManager");
     private static Properties config;
-    private final static String configDir = System.getProperty("user.home") + "/ShionServerConfig/HensyuBot";
+    private final static String configDir = System.getProperty("user.home") + "/ShionServerConfig/YNUFES-Design/config.properties";
 
     static {
         init();
