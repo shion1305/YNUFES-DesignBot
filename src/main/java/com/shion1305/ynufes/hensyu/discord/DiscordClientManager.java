@@ -5,8 +5,10 @@ import discord4j.core.DiscordClient;
 import discord4j.core.GatewayDiscordClient;
 import discord4j.gateway.intent.IntentSet;
 
-public class DiscordClientManager {
-    private static final GatewayDiscordClient client = DiscordClient.create(ConfigManager.getConfig("DiscordToken")).gateway().setEnabledIntents(IntentSet.all()).login().block();
+import javax.servlet.ServletContextListener;
+
+public class DiscordClientManager implements ServletContextListener {
+    private static final GatewayDiscordClient client = DiscordClient.builder(ConfigManager.getConfig("DiscordToken")).build().gateway().setEnabledIntents(IntentSet.all()).login().block();
 
     public static GatewayDiscordClient getClient() {
         return client;
