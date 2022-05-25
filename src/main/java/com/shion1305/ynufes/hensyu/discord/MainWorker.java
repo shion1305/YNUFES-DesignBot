@@ -56,9 +56,9 @@ public class MainWorker {
                                     actives.add(member.getId().asLong());
                                     if (actives.size() == 1) {
                                         member.getPrivateChannel().block().createMessage(EmbedCreateSpec.builder()
-                                                        .title("ãƒœã‚¤ã‚¹ãƒãƒ£ãƒ³ãƒãƒ«ã«ã‚ˆã†ã“ã!!")
+                                                        .title("ƒ{ƒCƒXƒ`ƒƒƒ“ƒlƒ‹‚É‚æ‚¤‚±‚»!!")
                                                         .color(Color.GREEN)
-                                                        .description("Lineã‚°ãƒ«ãƒ¼ãƒ—ã«å‚åŠ ã‚’é€šçŸ¥ã—ã¾ã™ã‹?")
+                                                        .description("LineƒOƒ‹[ƒv‚ÉQ‰Á‚ğ’Ê’m‚µ‚Ü‚·‚©?")
                                                         .build()).withComponents(ActionRow.of(Button.primary("notify-YES", "YES"), Button.secondary("notify-NO", "NO")))
                                                 .doOnSuccess(message1 -> {
                                                     sentMessage = new MessageData(member.getId().asLong(), message1.getChannelId().asLong(), message1.getId().asLong());
@@ -95,7 +95,7 @@ public class MainWorker {
                     try {
                         Message targetMessage = buttonInteractionEvent.getMessage().get();
                         if (buttonInteractionEvent.getCustomId().equals("notify-YES")) {
-                            buttonInteractionEvent.edit().withEmbeds(EmbedCreateSpec.builder().color(Color.DISCORD_WHITE).title("Lineã‚°ãƒ«ãƒ¼ãƒ—\"22æŠ€è¡“éƒ¨å®Ÿè£…ç­\"ã«é€šçŸ¥ã—ã¾ã—ãŸã€‚").description("æ­£å¸¸ã«å‹•ä½œã—ã¦ã„ãªã„æ™‚ã¯@shion1305ã¾ã§é€£çµ¡ãŠé¡˜ã„ã—ã¾ã™ã€‚").build())
+                            buttonInteractionEvent.edit().withEmbeds(EmbedCreateSpec.builder().color(Color.DISCORD_WHITE).title("LineƒOƒ‹[ƒv\"22‹Zp•”À‘•”Ç\"‚É’Ê’m‚µ‚Ü‚µ‚½B").description("³í‚É“®ì‚µ‚Ä‚¢‚È‚¢‚Í@shion1305‚Ü‚Å˜A—‚¨Šè‚¢‚µ‚Ü‚·B").build())
                                     .withComponents().block();
                             ConfigManager.refresh();
                             ArrayList<FlexComponent> components = new ArrayList<>();
@@ -103,7 +103,7 @@ public class MainWorker {
                             components.add(Separator.builder().color("#FFFFFF").build());
                             ArrayList<FlexComponent> textArea = new ArrayList<>();
                             textArea.add(Text.builder().text(buttonInteractionEvent.getInteraction().getUser().getUsername()).color("#FFFFFF").size(FlexFontSize.XL).align(FlexAlign.CENTER).margin(FlexMarginSize.SM).build());
-                            textArea.add(Text.builder().text("ãŒãƒœã‚¤ã‚¹ãƒãƒ£ãƒƒãƒˆã«å…¥å®¤ã—ã¾ã—ãŸ").color("#FFFFFF").wrap(true).gravity(FlexGravity.CENTER).align(FlexAlign.CENTER).build());
+                            textArea.add(Text.builder().text("‚ªƒ{ƒCƒXƒ`ƒƒƒbƒg‚É“üº‚µ‚Ü‚µ‚½").color("#FFFFFF").wrap(true).gravity(FlexGravity.CENTER).align(FlexAlign.CENTER).build());
                             components.add(Box.builder().contents(textArea).layout(FlexLayout.VERTICAL).build());
                             FlexMessage lineMessage = FlexMessage.builder()
                                     .contents(Bubble.builder()
@@ -113,7 +113,7 @@ public class MainWorker {
                                                     .layout(FlexLayout.HORIZONTAL)
                                                     .contents(components).build())
                                             .build())
-                                    .altText("DOT ãƒœã‚¤ã‚¹ãƒãƒ£ãƒ³ãƒãƒ«å‚åŠ é€šçŸ¥").build();
+                                    .altText("DOT ƒ{ƒCƒXƒ`ƒƒƒ“ƒlƒ‹Q‰Á’Ê’m").build();
                             colorSwitcher = !colorSwitcher;
                             PushMessage pMessage = new PushMessage(ConfigManager.getConfig("LineBotTarget"), lineMessage);
                             BotApiResponse resp = LineMessagingClient.builder(ConfigManager.getConfig("LineClientToken"))
