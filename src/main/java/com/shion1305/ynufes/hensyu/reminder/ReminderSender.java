@@ -20,14 +20,14 @@ public class ReminderSender {
     private static final Logger logger = Logger.getLogger("RemindSender");
     private static Timer timer = new Timer();
 
-    public static void schedule(String title, String deadline, Date date) {
+    public static void schedule(String title, String deadline, Date date, String linkText, String linkButton) {
         if (date.after(new Date())) {
             timer.schedule(new TimerTask() {
                 @Override
                 public void run() {
                     ConfigManager.refresh();
                     try {
-                        LineClientManger.getClient().pushMessage(new PushMessage(ConfigManager.getConfig("LineTarget"), ReminderMessageGenerator.createMessage(title, deadline))).get();
+                        LineClientManger.getClient().pushMessage(new PushMessage(ConfigManager.getConfig("LineTarget"), ReminderMessageGenerator.createMessage(title, deadline,linkText,linkButton))).get();
                     } catch (InterruptedException | ExecutionException e) {
                         e.printStackTrace();
                     }

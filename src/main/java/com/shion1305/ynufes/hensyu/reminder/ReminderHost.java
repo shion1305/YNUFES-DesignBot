@@ -27,13 +27,13 @@ public class ReminderHost implements ServletContextListener {
         try (Scanner s = new Scanner(new FileInputStream(System.getProperty("user.home") + "/ShionServerConfig/YNUFES-Design/Reminders"), StandardCharsets.UTF_8)) {
             while (s.hasNextLine()) {
                 String s1 = s.nextLine();
-                Pattern pattern = Pattern.compile("([^,]+),(.*),([^,]+)");
+                Pattern pattern = Pattern.compile("([^,]+),([^,]*),([^,]*),([^,]*),([^,]*)");
                 Matcher matcher = pattern.matcher(s1);
                 if (!matcher.find()) continue;
                 String title = matcher.group(1);
                 String deadline = matcher.group(2);
                 Date date = new SimpleDateFormat("yyyy/MM/dd HH:mm").parse(matcher.group(3));
-                ReminderSender.schedule(title, deadline, date);
+                ReminderSender.schedule(title, deadline, date, matcher.group(4), matcher.group(5));
                 logger.info("Scheduled " + title + " | " + deadline + " | " + date.toString());
             }
         } catch (ParseException | FileNotFoundException e) {
